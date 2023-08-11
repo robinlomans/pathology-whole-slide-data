@@ -6,7 +6,7 @@ with open("wholeslidedata/version.py") as fp:
 
 setup(
     name="wholeslidedata",
-    version=version['__version__'],
+    version=version["__version__"],
     author="Mart van Rijthoven",
     author_email="mart.vanrijthoven@gmail.com",
     package_data={"": ["*.yml"]},
@@ -15,7 +15,7 @@ setup(
     license="LICENSE.txt",
     install_requires=[
         "concurrentbuffer>=0.0.8",
-        "dicfg>=0.0.10",
+        "dicfg @ file:///home/user/dicfg",
         "sourcelib>=0.0.4",
         "numpy>=1.20.2",
         "opencv-python-headless>=4.4.0",
