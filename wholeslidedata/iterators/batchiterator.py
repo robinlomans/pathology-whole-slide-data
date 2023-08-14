@@ -58,7 +58,7 @@ class BatchIterator(BufferIterator):
         ):
             x_batch = x_batch[: self._batch_left]
             y_batch = y_batch[: self._batch_left]
-            
+
             for idx, extra in enumerate(extras):
                 extras[idx] = extra[: self._batch_left]
 
@@ -147,12 +147,13 @@ def create_batch_iterator(
         search_paths=search_paths,
     )
 
+    user_config = deepcopy(user_config)
     config = config_reader.read(user_config=user_config, presets=presets)
     batch_shape_args = deepcopy(config[mode]["batch_shape"])
     batch_shape_args.pop("*object")
     batch_shape = BatchShape(**batch_shape_args)
     buffer_shapes = get_buffer_shape(batch_shape)
-    
+
     if len(extras_shapes) > 0:
         buffer_shapes = buffer_shapes + extras_shapes
 
