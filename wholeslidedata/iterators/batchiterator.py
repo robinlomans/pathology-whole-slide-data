@@ -159,6 +159,7 @@ def create_batch_iterator(
 
     if number_of_batches is not None and number_of_batches > 0:
         batch_left = 0
+        dataset = build_config(config[mode])["dataset"]
     else:
         dataset = build_config(config[mode])["dataset"]
         number_of_batches, batch_left = get_number_of_batches(
@@ -192,9 +193,6 @@ def create_batch_iterator(
         buffer_shapes=buffer_shapes,
         buffer_dtype=buffer_dtype,
     )
-
-    if dataset is None:
-        dataset = build_config(config[mode])["dataset"]
 
     return iterator_class(
         buffer_factory=buffer_factory,
