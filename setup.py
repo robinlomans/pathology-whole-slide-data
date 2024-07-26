@@ -16,7 +16,7 @@ setup(
     install_requires=[
         "concurrentbuffer>=0.0.8",
         "dicfg @ file:///home/user/dicfg",
-        "sourcelib>=0.0.4",
+        "sourcelib @ file:///home/user/source-lib",
         "numpy>=1.20.2",
         "opencv-python-headless>=4.4.0",
         "scipy>=1.5.2",
